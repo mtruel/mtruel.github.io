@@ -1,0 +1,54 @@
+# section information
+section:
+  name: Compétences
+  id: skills
+  enable: true
+  weight: 2
+  # showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Python
+  logo: /images/sections/skills/python.png
+  summary: "Compréhension avancé du language. Utilisation des libraries scientifiques, backend ([FastAPI(https://fastapi.tiangolo.com/)]) et interfaces utilisateur (PyQT)"
+
+- name: Machine Learning
+  logo: /images/sections/skills/machine_learning.png
+  summary: "Méthodologie de construction de modèles de régressions. Utilisation de [Pandas](https://pandas.pydata.org/), [scikit-learn](https://scikit-learn.org) et [PyTorch](https://pytorch.org/)."
+
+- name: Architecture de code
+  summary: "Architecture CLEAN, refactoring, "
+  # logo: /images/sections/skills/prometheus.png
+
+- name: Calcul Haute Performance
+  logo: /images/sections/skills/hpc.png
+  summary: "Calcul parallèle ([Open-MPI](https://en.wikipedia.org/wiki/Open_MPI), [Open-MP](https://en.wikipedia.org/wiki/OpenMP)). Programmation GPU ([Open-ACC](https://www.openacc.org/), [CUDA](https://docs.nvidia.com/cuda/cuda-c-programming-guide/index.html)). Vectorisation ([SMID](https://fr.wikipedia.org/wiki/Single_instruction_multiple_data))."
+
+- name: C++
+  logo: /images/sections/skills/c++.png
+  summary: "Calcul haute performance."
+
+- name: Fortran
+  logo: /images/sections/skills/fortran.png
+  summary: "Calcul haute performance."
+
+- name: Linux
+  logo: /images/sections/skills/linux.png
+  summary: "Utilisation en OS principal et sur cluster avec [slurm](https://slurm.schedmd.com/overview.html)"
+
+- name: Docker
+  logo: /images/sections/skills/docker.svg
+  summary: "Déploiements avec docker compose, fabrications d'images"
+
+- name: Frontend web
+  logo: /images/sections/skills/vue.png
+  summary: "Frontend [Nuxt.js](https://nuxt.com/)/[Vue.js](https://vuejs.org/) d'un outil de gestion de librairie musicale"
+  # url: https://fr.wikipedia.org/wiki/Frontal_(serveur)
+
+- name: Backend web
+  # logo: /images/sections/skills/latex.png
+  summary: "Backend typescript avec [Nuxt.js](https://nuxt.com/)/[Nitro](https://nitro.build/) d'un outil de gestion de librairie musicale"
+  # url: https://fr.wikipedia.org/wiki/Backend

@@ -1,0 +1,59 @@
+# section information
+section:
+  name: Formation
+  id: education
+  template: sections/education.html # Use "sections/education-alt.html for alternate template.
+  enable: true
+  weight: 4
+  # showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+degrees:
+- name : (En cours) - Doctorat en reduction de modèles non linéaire
+  icon: fa-graduation-cap
+  timeframe: Bordeaux 2023-2026
+  institution:
+    name: INRIA Bordeaux Sud-Ouest équipe MEMPHIS | Ingeliance
+    url: "https://theses.fr/s373445"
+
+
+- name: École d'ingénieur - Filière Mathématiques et Mécaniques, spécialité Calcul Haute Performance
+  icon: fa-graduation-cap
+  timeframe: Bordeaux 2019-2022
+  takenCourses:
+    courses:
+    - name: Programmation et mathématiques pour les méthodes numériques 
+    - name: Elements finis, Volumes Finis d'ordre élevés
+    - name: Mécanique des fluides - Mécaniques des solides, Matériaux
+    - name: Analyse de données - Machine Learning, Deep Learning
+    - name: Solveurs linéaires
+    - name: Techniques de maillages
+    - name: Méthodes des volumes finis d'ordre élevé
+  institution:
+    name: ENSEIRB-Matmeca | Bordeaux INP
+    url: "https://enseirb-matmeca.bordeaux-inp.fr/fr"
+  extracurricularActivities:
+  - Trésorier du Bureau des élèves
+  - DJ aux soirées écoles (700 pers) 
+
+- name: Master - Mathématiques Appliquées et Statistiques, parcours Modélisation Numérique et Calcul Haute Performance
+  icon: fa-university
+  timeframe: Bordeaux 2021-2022
+  institution:
+    name: Université de Bordeaux
+    url: "https://www.u-bordeaux.fr/admin/ancienne-formation?annee=2020&code=PRMA_19&titre=mathematiques-appliquees-statistique"
+
+
+- name: Classes préparatoires aux grandes écoles PTSI/PT*
+  icon: fa-university
+  timeframe: Grenoble 2017-2019
+  institution:
+    name: Lycée Vaucanson
+    url: https://cpge38vaucanson.com/
+  takenCourses:
+    courses:
+    - name: Conception et dessin industriel
+    - name: Mécanique
+    - name: Physique
+    - name: Mathématiques

@@ -1,0 +1,52 @@
+# section information
+section:
+  name: Expériences
+  id: experiences
+  enable: true
+  weight: 3
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true 
+
+# Your experiences
+experiences:
+- company:
+    name: Ingeliance
+    url: "https://ingeliance.com/"
+    location: Mérignac
+    overview: Société de d'ingénierie industrielle
+  positions:
+  - designation: Ingénieur doctorant CIFRE avec l'INRIA Memphis/Institut Mathématiques de Bordeaux
+    start: Mai 2023
+    end: aujourd'hui
+    responsibilities:
+    - Sujet, [Modèles hybrides instationnaires appliqués à des simulations couplées d'interaction fluide-structure](https://theses.fr/s373445)
+  - designation: Ingénieur/Développeur
+    start: Octobre 2022
+    end: Mai 2023
+    responsibilities:
+    - Refactoring de codes scientifiques
+    - Intégration continue
+  - designation: Stagiaire
+    start: Février 2022
+    end: Juillet 2022
+    responsibilities:
+    - Etude bibliographique
+    - Prédiction de résultats de simulations numériques via des méthodes supervisées 
+    - Adaptive sampling, Processus Gaussiens, Krigeage
+    - Réduction de modèle non intrusive, POD, MLP
+    - Application sur des modèles de dynamique rapide instationnaires, LS-Dyna  
+
+- company:
+    name: Novespace
+    url: "https://www.airzerog.com/fr/prestations-science/"
+    location: Mérignac
+    overview: Validation mécanique pour l'embarquement d'expériences en apesanteur à bord de l'A310 Air-ZeroG
+  positions:
+  - designation: Stagiaire
+    start: Juin 2021
+    end: Sept 2021
+    responsibilities:
+    - Étude de faisabilité du projet
+    - Modification d'un logiciel de modélisation de structures éléments finis
+    - Réalisation d'un programme Python orienté objets 
