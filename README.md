@@ -1,5 +1,4 @@
 # Site personnel de Mathias Truel
 
-Site construit avec hugo à partir du thème toh.
-. 
+Site construit avec hugo à partir du thème toha
 
