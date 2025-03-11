@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Machine Learning on Mathias Truel</title><link>https://mathias.truel.fr/tags/machine-learning/</link><description>Recent content in Machine Learning on Mathias Truel</description><generator>Hugo -- gohugo.io</generator><language>fr</language><lastBuildDate>Mon, 08 Jun 2020 08:06:25 +0600</lastBuildDate><atom:link href="https://mathias.truel.fr/tags/machine-learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Deep Learning - formation Fidle</title><link>https://mathias.truel.fr/posts/machine-learning/fidle/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://mathias.truel.fr/posts/machine-learning/fidle/</guid><description>&lt;p>Liens vers le GitLab &lt;a href="https://gricad-gitlab.univ-grenoble-alpes.fr/talks/fidle/-/wikis/Fidle%20%C3%A0%20distance/Pr%C3%A9sentation" target="_blank" rel="noopener">Fidle&lt;/a>&lt;/p>
+&lt;h1 id="1---introduction-contexte-et-historique">1 - Introduction, Contexte et historique&lt;/h1>
+&lt;h2 id="intro-et-contexte-">Intro et contexte :&lt;/h2>
+&lt;p>Approche avec les 4 paradigmes. &lt;br />
+Description du monde de l&amp;rsquo;IA. Machine Learning et Deep Learning. ( Schéma 3 disques ) &lt;br />
+Descriptions des 4 grandes familles du ML en fonction de l&amp;rsquo;apprentissage :&lt;/p>
+&lt;ul>
+&lt;li>Supervisé&lt;/li>
+&lt;li>Non-supervisé&lt;/li>
+&lt;li>Renforcement&lt;/li>
+&lt;li>Transfert&lt;/li>
+&lt;/ul>
+&lt;p>Les outils du deep-learning :&lt;/p>
+&lt;ul>
+&lt;li>Keras + Tensorflow (utilisé dans l&amp;rsquo;industrie)&lt;/li>
+&lt;li>PyTorch&lt;/li>
+&lt;li>+ outils classiques (python, numpy, jupyter notebooks)&lt;/li>
+&lt;/ul>
+&lt;p>Les environnements sont difficiles à installer -&amp;gt; Docker
+Besoin de puissance de calcul, donc on utilise des GPU. Des centres de calculs existent pour ça. Certains sont accessibles sur demandes (GENCI, Méso)&lt;/p></description></item></channel></rss>

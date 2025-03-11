@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mathias Truel</title><link>https://mathias.truel.fr/</link><description>Recent content on Mathias Truel</description><generator>Hugo -- gohugo.io</generator><language>fr</language><lastBuildDate>Mon, 08 Jun 2020 08:06:25 +0600</lastBuildDate><atom:link href="https://mathias.truel.fr/index.xml" rel="self" type="application/rss+xml"/><item><title>Deep Learning - formation Fidle</title><link>https://mathias.truel.fr/posts/machine-learning/fidle/</link><pubDate>Mon, 08 Jun 2020 08:06:25 +0600</pubDate><guid>https://mathias.truel.fr/posts/machine-learning/fidle/</guid><description>&lt;p>Liens vers le GitLab &lt;a href="https://gricad-gitlab.univ-grenoble-alpes.fr/talks/fidle/-/wikis/Fidle%20%C3%A0%20distance/Pr%C3%A9sentation" target="_blank" rel="noopener">Fidle&lt;/a>&lt;/p>
+&lt;h1 id="1---introduction-contexte-et-historique">1 - Introduction, Contexte et historique&lt;/h1>
+&lt;h2 id="intro-et-contexte-">Intro et contexte :&lt;/h2>
+&lt;p>Approche avec les 4 paradigmes. &lt;br />
+Description du monde de l&amp;rsquo;IA. Machine Learning et Deep Learning. ( Schéma 3 disques ) &lt;br />
+Descriptions des 4 grandes familles du ML en fonction de l&amp;rsquo;apprentissage :&lt;/p>
+&lt;ul>
+&lt;li>Supervisé&lt;/li>
+&lt;li>Non-supervisé&lt;/li>
+&lt;li>Renforcement&lt;/li>
+&lt;li>Transfert&lt;/li>
+&lt;/ul>
+&lt;p>Les outils du deep-learning :&lt;/p>
+&lt;ul>
+&lt;li>Keras + Tensorflow (utilisé dans l&amp;rsquo;industrie)&lt;/li>
+&lt;li>PyTorch&lt;/li>
+&lt;li>+ outils classiques (python, numpy, jupyter notebooks)&lt;/li>
+&lt;/ul>
+&lt;p>Les environnements sont difficiles à installer -&amp;gt; Docker
+Besoin de puissance de calcul, donc on utilise des GPU. Des centres de calculs existent pour ça. Certains sont accessibles sur demandes (GENCI, Méso)&lt;/p></description></item><item><title>To_test</title><link>https://mathias.truel.fr/notes/python/to_test/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mathias.truel.fr/notes/python/to_test/</guid><description>&lt;!-- Condition -->
+&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Force typing - pydantic&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;p>Permet d&amp;rsquo;imposer les types. La vérification est effectuée à l&amp;rsquo;exécution.
+&lt;a href="https://pydantic-docs.helpmanual.io/" target="_blank" rel="noopener">https://pydantic-docs.helpmanual.io/&lt;/a>&lt;/p>
+&lt;p>Utilisation :&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> pydantic &lt;span style="color:#f92672">import&lt;/span> BaseModel
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">User&lt;/span>(BaseModel):
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> id: int
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> name &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;John Doe&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> signup_ts: datetime &lt;span style="color:#f92672">|&lt;/span> &lt;span style="color:#66d9ef">None&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#66d9ef">None&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> friends: list[int] &lt;span style="color:#f92672">=&lt;/span> []
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Une ValidationError est levée quand le type n&amp;rsquo;est pas respecté.&lt;/p>
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> pydantic &lt;span style="color:#f92672">import&lt;/span> ValidationError
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">try&lt;/span>:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> User(signup_ts&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;broken&amp;#39;&lt;/span>, friends&lt;span style="color:#f92672">=&lt;/span>[&lt;span style="color:#ae81ff">1&lt;/span>, &lt;span style="color:#ae81ff">2&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;not number&amp;#39;&lt;/span>])
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">except&lt;/span> ValidationError &lt;span style="color:#66d9ef">as&lt;/span> e:
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> print(e&lt;span style="color:#f92672">.&lt;/span>json())
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Basic</title><link>https://mathias.truel.fr/notes/python/basic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mathias.truel.fr/notes/python/basic/</guid><description>&lt;!-- Condition -->
+&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Basic syntax&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#75715e"># &lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Normes de formats&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">Le style du code Python est donné par la norme PEP8.
+&lt;a href="https://peps.python.org/pep-0008/" target="_blank" rel="noopener">https://peps.python.org/pep-0008/&lt;/a>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Conding_env</title><link>https://mathias.truel.fr/notes/python/coding_env/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mathias.truel.fr/notes/python/coding_env/</guid><description>&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Venv&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Conda&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Pip&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Machine Learning</title><link>https://mathias.truel.fr/notes/python/machine_learning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mathias.truel.fr/notes/python/machine_learning/</guid><description>&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Exemple regression - Keras&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-python" data-lang="python">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">import&lt;/span> tensorflow &lt;span style="color:#66d9ef">as&lt;/span> tf
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">from&lt;/span> tensorflow &lt;span style="color:#f92672">import&lt;/span> keras
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model &lt;span style="color:#f92672">=&lt;/span> keras&lt;span style="color:#f92672">.&lt;/span>models&lt;span style="color:#f92672">.&lt;/span>Sequential()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model&lt;span style="color:#f92672">.&lt;/span>add(keras&lt;span style="color:#f92672">.&lt;/span>layers&lt;span style="color:#f92672">.&lt;/span>Input(shape, name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;InputLayer&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model&lt;span style="color:#f92672">.&lt;/span>add(keras&lt;span style="color:#f92672">.&lt;/span>layers&lt;span style="color:#f92672">.&lt;/span>Dense(&lt;span style="color:#ae81ff">32&lt;/span>, activation&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;relu&amp;#39;&lt;/span>, name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;Dense_n1&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model&lt;span style="color:#f92672">.&lt;/span>add(keras&lt;span style="color:#f92672">.&lt;/span>layers&lt;span style="color:#f92672">.&lt;/span>Dense(&lt;span style="color:#ae81ff">64&lt;/span>, activation&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;relu&amp;#39;&lt;/span>, name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;Dense_n2&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model&lt;span style="color:#f92672">.&lt;/span>add(keras&lt;span style="color:#f92672">.&lt;/span>layers&lt;span style="color:#f92672">.&lt;/span>Dense(&lt;span style="color:#ae81ff">32&lt;/span>, activation&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;relu&amp;#39;&lt;/span>, name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;Dense_n3&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model&lt;span style="color:#f92672">.&lt;/span>add(keras&lt;span style="color:#f92672">.&lt;/span>layers&lt;span style="color:#f92672">.&lt;/span>Dense(&lt;span style="color:#ae81ff">1&lt;/span>, name&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#39;Output&amp;#39;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>model&lt;span style="color:#f92672">.&lt;/span>compile(optimizer &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;adam&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> loss &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#e6db74">&amp;#39;mse&amp;#39;&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> metrics &lt;span style="color:#f92672">=&lt;/span> [&lt;span style="color:#e6db74">&amp;#39;mae&amp;#39;&lt;/span>, &lt;span style="color:#e6db74">&amp;#39;mse&amp;#39;&lt;/span>] )
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>history &lt;span style="color:#f92672">=&lt;/span> model&lt;span style="color:#f92672">.&lt;/span>fit(x_train,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> y_train,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> epochs &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">60&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> batch_size &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#ae81ff">10&lt;/span>,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> verbose &lt;span style="color:#f92672">=&lt;/span> fit_verbosity,
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> validation_data &lt;span style="color:#f92672">=&lt;/span> (x_test, y_test))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>score &lt;span style="color:#f92672">=&lt;/span> model&lt;span style="color:#f92672">.&lt;/span>evaluate(x_test, y_test, verbose&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#ae81ff">0&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>predictions &lt;span style="color:#f92672">=&lt;/span> model&lt;span style="color:#f92672">.&lt;/span>predict( my_data )
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item><item><title>Bash Variables</title><link>https://mathias.truel.fr/notes/bash/basic/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://mathias.truel.fr/notes/bash/basic/</guid><description>&lt;!-- Variable -->
+&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Variable&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>NAME&lt;span style="color:#f92672">=&lt;/span>&lt;span style="color:#e6db74">&amp;#34;John&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo $NAME
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$NAME&lt;span style="color:#e6db74">&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>echo &lt;span style="color:#e6db74">&amp;#34;&lt;/span>&lt;span style="color:#e6db74">${&lt;/span>NAME&lt;span style="color:#e6db74">}&lt;/span>&lt;span style="color:#e6db74">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;!-- Condition -->
+&lt;div class="note-card ">
+&lt;div class="item">
+&lt;h5 class="note-title">&lt;span>Condition&lt;/span>&lt;/h5>
+&lt;div class="card">
+&lt;div class="card-body">&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-bash" data-lang="bash">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">if&lt;/span> &lt;span style="color:#f92672">[[&lt;/span> -z &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$string&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;String is empty&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">elif&lt;/span> &lt;span style="color:#f92672">[[&lt;/span> -n &lt;span style="color:#e6db74">&amp;#34;&lt;/span>$string&lt;span style="color:#e6db74">&amp;#34;&lt;/span> &lt;span style="color:#f92672">]]&lt;/span>; &lt;span style="color:#66d9ef">then&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> echo &lt;span style="color:#e6db74">&amp;#34;String is not empty&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">fi&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;/div>
+&lt;/div>
+&lt;/div>
+&lt;/div></description></item></channel></rss>
