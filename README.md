@@ -1,5 +1,4 @@
 # Site personnel de Mathias Truel
-
-Site construit avec hugo à partir du thème toha
-
+[mathias.truel.fr](https://mathias.truel.fr)
+[mtruel.github.io](https://mtruel.github.io)
 
